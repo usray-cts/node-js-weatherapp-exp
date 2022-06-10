@@ -9,6 +9,8 @@ const app = express()
 const publicDirectoryPath = path.join(__dirname, '../public')
 const viewsPath = path.join(__dirname,'../templates')
 
+const port = process.env.PORT || 3000
+
 app.set('view engine', 'hbs')
 app.set('views',viewsPath)
 app.use(express.static(publicDirectoryPath))
@@ -23,7 +25,7 @@ app.get('', (req, res) => {
 app.get('/about', (req, res) => {
     res.render('about', {
         title: 'About Me',
-        name: 'Andrew Mead'
+        name: 'Uttam Sundar Ray'
     })
 })
 
